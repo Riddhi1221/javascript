@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
+         
+    <img class="box" src="https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?cs=srgb&dl=pexels-pixabay-257360.jpg&fm=jpg" onclick="" alt="" id="demo" >
+    <button onclick="data()" id="text">next </button>
+    
     <script>
-        
+
+        document.getElementById("demo").classList.add('box')
+
+               let a = 1
+function data() {
+    if(a == 1){
+        document.getElementById("demo").src = 'https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?cs=srgb&dl=pexels-pixabay-257360.jpg&fm=jpg'
+        document.getElementById("text").innerHTML = "next"
+        a = 2
+    }else{
+        document.getElementById("demo").src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/800px-Altja_j%C3%B5gi_Lahemaal.jpg'
+        document.getElementById("text").innerHTML = "previous"
+        a = 1
+    }
+}
+   
     </script>
 </body>
 </html>
