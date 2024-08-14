@@ -1,0 +1,45 @@
+<script>
+        // let a = [10, 20, 30, 40];
+        // let b = [...a, 50, 60, 70, 80];
+        // let newarr=[]
+        // let c,d,e,f
+        // function sum(c,d,e,f) {
+        //     for (let i = 0; i < b.length; i++) {
+        //     newarr[i]=a[i]+b[i]
+        //     }
+        // }
+        // sum(10,20,30,40);
+        
+        // console.log(newarr); 
+
+        let a = [10, 20,30, 40];
+    let b = [...a, 50, 60, 70, 80];
+    let sum = 0;
+    console.log(b);
+        console.log("min value:", Math.min(...b));
+        console.log("max value:" ,Math.max(...b));
+
+    function array(...b) {
+        for (let i = 0; i < b.length; i++) {
+        sum = sum + b[i];
+        }
+        console.log("total:",sum);
+    }
+    array(...b);
+
+
+
+        // let a = [10, 20, 30, 40];
+        // let b = [...a, 50, 60, 70, 80];
+        // let newarr=[]
+
+        // function sum(a,b) {
+        //     let length = Math.max(a.length, b.length);
+        //     for (let i = 0; i < length; i++) {
+        //     newarr[i]=a[i]+b[i]
+        //     }
+        // }
+        // sum(a,b);
+        
+        // console.log(newarr); 
+</script>

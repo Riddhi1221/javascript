@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums1=[10,21,30,25,50,45,70]
+        let nums2=[25,45,22,54,87,10,5]
+        let newarr=[]
+        let n
+        let i
+        let j
+        let p=0
+        for (let i = 0; i < nums1.length; i++) {
+            console.log(nums1[i]);
+        }
+        for (let j = 0; j < nums2.length; j++) {
+            console.log(nums2[j]);
+        }
+        for (let n = 0; n < nums1.length+nums2.length; n++) {
+            if(n<nums1.length)
+        {
+            newarr[n]=nums1[n]
+        }
+        else
+        {
+            newarr[n]=nums2[p]
+            p++;
+        }
+        }
+        console.log(newarr);     
+    </script>
+</body>
+</html>

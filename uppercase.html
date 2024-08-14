@@ -1,0 +1,17 @@
+<script>
+    let a=`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate blanditiis pariatur ullam corrupti
+        assumenda dolore facere temporibus, fugiat libero veniam iste! Quod perferendis fuga quasi eos aspernatur ex
+        qui!`
+
+    let b = [];
+
+    for (let i = 0; i < a.length; i++) {
+        let char = a.at(i);
+        if (char >= 'A' && char <= 'Z') {
+            b.push(char);
+        }
+    }
+
+    console.log("uppercase found:", b);
+    console.log("Number of uppercase:", b.length);
+</script>

@@ -1,0 +1,16 @@
+<script>
+    let arr = [1, 2, 2, 3, 4, 1];
+let uniquearr = [];
+
+function duplicatesArr() {
+    for (let i = 0; i < arr.length; i++) {
+        if (!uniquearr.includes(arr[i])) { 
+            uniquearr.push(arr[i]); 
+        }
+    }
+    uniquearr.sort(); 
+}
+duplicatesArr();
+console.log(uniquearr);
+    
+</script>

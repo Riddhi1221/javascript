@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <p id="demo">Het Rupani</p> -->
+    <!-- <p id="demo" class="box">Het Rupani</p>
+    <p>Het Rupani</p>
+    <p >Het Rupani</p> -->
+    <!-- <img  width="300px" id="demo" alt=""> -->
+     <img src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg" alt="" id="demo" width="400px" onclick="data()">
+     <button onclick="data()" id="text">Chako Chaki</button>
+    <script>
+        // document.write("hello het")
+        // let data = document.getElementsByTagName('p')
+        // data[0].innerHTML = "<h1>Vijay rupani</h1>"
+        // data[1].innerText = "<h1>Vijay rupani</h1>"
+
+        // console.log(data);
+
+// let data = document.getElementsByClassName("demo")
+// data[0].innerHTML = "welcome"
+// data[1].innerHTML = "welcome"
+
+// document.getElementById("demo").innerHTML = "welcome"
+
+
+// document.getElementById("demo").style.color = "red"
+// document.getElementById("demo").style.backgroundColor = "pink"
+// document.getElementById("demo").classList.add('box')
+// document.getElementById("demo").classList.remove('box')
+
+// document.getElementById("demo").src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLSWc1dgc2nnEZHhSbc9-zVUGrYjlCOZx0ScMoDNb9KG3svy4J7SDwxOf9H0Tl6QsauI4&usqp=CAU'
+
+// document.getElementById("demo").setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLSWc1dgc2nnEZHhSbc9-zVUGrYjlCOZx0ScMoDNb9KG3svy4J7SDwxOf9H0Tl6QsauI4&usqp=CAU")
+// document.getElementById("demo").removeAttribute("src")
+let a = 1
+function data() {
+    if(a == 1){
+        document.getElementById("demo").src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLSWc1dgc2nnEZHhSbc9-zVUGrYjlCOZx0ScMoDNb9KG3svy4J7SDwxOf9H0Tl6QsauI4&usqp=CAU'
+        document.getElementById("text").innerHTML = "Chako"
+        a = 2
+    }else{
+        document.getElementById("demo").src = 'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg'
+        document.getElementById("text").innerHTML = "Chako Chaki"
+        a = 1
+    }
+}
+</script>       
+</body>
+
+</html>

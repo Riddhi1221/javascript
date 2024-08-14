@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name,eng,guj,hindi,total,per,grade
+        name=(prompt("name="));
+        eng=parseInt (prompt("eng="));
+        hindi=parseInt (prompt("hindi="));
+        guj=parseInt (prompt("guj="));
+
+        console.log(name);
+        console.log(eng);
+        console.log(hindi);
+        console.log(guj);
+
+        function Total1(eng,hindi,guj) {
+            total=eng+hindi+guj
+            return total
+        }
+        console.log(Total1(eng,hindi,guj));
+
+        function percentage(total) {
+            per=total/3
+            return parseInt(per)
+        }
+        console.log(percentage(total));
+
+        function grade1(per) {
+        if(per >90)
+        {
+            return("grade a+")
+        }
+        else if(per >80)
+        {
+            return("grade a")
+        }
+        else if(per >70)
+        {
+            return("grade b")
+        }
+        else if(per > 60)
+        {
+            return("grade c")
+        }
+        else if(per > 50)
+        {
+            return("grade d")
+        }
+        else if(per>40)
+        {
+            return("grade e")
+        }
+        else if (per >30 && per <1)
+        {
+            return ("Fail")
+        }
+        }
+        console.log(grade1(per));
+    </script>
+</body>
+</html> 

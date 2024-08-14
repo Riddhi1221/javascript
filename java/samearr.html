@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nums1 = [10, 21, 30, 25, 50, 45, 70]
+        let nums2 = [25, 45, 10, 54, 87, 10, 5]
+        let newarr = []
+        let i, p = 0
+        for (let i = 0; i < nums1.length; i++) {
+    for (let j = 0; j < nums2.length; j++) {
+        if (nums1[i] === nums2[j]) {
+            newarr[p] = nums1[i];
+            p++;
+        }
+    }
+}
+        console.log(newarr);
+    </script>
+</body>
+
+</html>

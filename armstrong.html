@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let n,x,rem,sum=0
+        n = prompt("Enter num=")
+        x=n;
+
+        while(x != 0)
+        {
+            rem=x%10;
+            sum=sum+(rem*rem*rem);
+            x=parseInt(x/10);
+        }
+        if(sum == n)
+        {
+            console.log("This is arms");
+        }
+        else
+        {
+            console.log("This is not arms");
+        }
+    </script>
+</body>
+</html>

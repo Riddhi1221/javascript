@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     
+    <script>
+        let a = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate blanditiis pariatur ullam corrupti
+        assumenda dolore facere temporibus, fugiat libero veniam iste! Quod perferendis fuga quasi eos aspernatur ex
+        qui!`
+
+        let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let b = [];
+
+    for (let i = 0; i < a.length; i++) {
+        if (vowels.includes(a[i])) {
+            b.push(a[i]);
+        }
+    }
+
+    console.log("Vowels found:", b);
+    console.log("Number of vowels:", b.length);
+
+    </script>
+</body>
+
+</html>

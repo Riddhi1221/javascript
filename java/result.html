@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let maths,sci,guj,total,par
+        name=(prompt("name="));
+        maths=parseInt (prompt("maths="));
+        sci=parseInt (prompt("sci="));
+        guj=parseInt (prompt("guj="));
+
+        console.log(name);
+        console.log(maths);
+        console.log(sci);
+        console.log(guj);
+        
+        total=maths+sci+guj
+        console.log(total);
+        
+        per=total/3;
+        console.log(parseInt(per));
+        
+        if(per >90)
+        {
+            console.log("grade a")
+        }
+        else
+        {
+            if(per >80)
+            {
+                console.log("grade b")
+            }
+            else
+            {
+                if(per >70)
+                {
+                    console.log("grade c")
+                }
+                else 
+                {
+                    console.log("grade d")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
