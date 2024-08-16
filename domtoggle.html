@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #toggleButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #toggleButton.active {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="toggleButton">OFF</button>
+
+    <script>
+        let toggleButton = document.getElementById('toggleButton');
+
+        function toggleButtonState() {
+
+            toggleButton.toggle('active');
+
+            if (toggleButton.contains('active')) {
+                toggleButton.text = 'ON';
+            } else {
+                toggleButton.text = 'OFF';
+            }
+        }
+
+        // Add an event listener to the button to handle clicks
+        toggleButton.addEventListener('click', toggleButtonState);
+
+    </script>
+</body>
+
+</html>
