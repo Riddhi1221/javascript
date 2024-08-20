@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toggle Button</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         #toggleButton {
             padding: 10px 20px;
@@ -26,22 +25,21 @@
     <button id="toggleButton">OFF</button>
 
     <script>
-        let toggleButton = document.getElementById('toggleButton');
 
-        function toggleButtonState() {
+let toggleButton = document.getElementById('toggleButton');
 
-            toggleButton.toggle('active');
+function toggleButtonState() {
 
-            if (toggleButton.contains('active')) {
-                toggleButton.text = 'ON';
-            } else {
-                toggleButton.text = 'OFF';
-            }
-        }
+    toggleButton.classList.toggle('active');
 
-        // Add an event listener to the button to handle clicks
-        toggleButton.addEventListener('click', toggleButtonState);
-
+ 
+    if (toggleButton.classList.contains('active')) {
+        toggleButton.textContent = 'ON';
+    } else {
+        toggleButton.textContent = 'OFF';
+    }
+}
+toggleButton.addEventListener('click', toggleButtonState);
     </script>
 </body>
 

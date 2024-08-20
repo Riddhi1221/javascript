@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch</title>
+
+    <style>
+#toggleSwitch {
+    width: 80px;
+    height: 40px;
+    background-color: #f60b0b;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.toggleButton {
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+#toggleSwitch.on {
+    background-color: #4caf50;
+}
+#toggleSwitch.on .toggleButton {
+    left: 42px; /* Moves the button to the right */
+}
+
+    </style>
+</head>
+<body>
+        <div id="toggleSwitch" class="off">
+            <div class="toggleButton"></div>
+        </div>
+    <script >
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleSwitch = document.getElementById('toggleSwitch');
+
+    toggleSwitch.addEventListener('click', function() {
+        // Toggle the class
+        toggleSwitch.classList.toggle('on');
+    });
+});
+
+    </script>
+</body>
+</html>
+
+
+
