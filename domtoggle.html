@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggle Button</title>
-    <style>
-        #toggleButton {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    <title>Toggle Switch</title>
 
-        #toggleButton.active {
-            background-color: green;
-        }
+    <style>
+#toggleSwitch {
+    width: 80px;
+    height: 40px;
+    background-color: #f60b0b;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+.toggleButton {
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+#toggleSwitch.on {
+    background-color: #4caf50;
+}
+#toggleSwitch.on .toggleButton {
+    left: 42px; 
+}
+
     </style>
 </head>
-
 <body>
-    <button id="toggleButton">OFF</button>
-
+        <div id="toggleSwitch" class="off">
+            <div class="toggleButton"></div>
+        </div>
+        
     <script>
+document.getElementById('toggleSwitch').onclick = function() {
+    this.classList.toggle('on');
+};
+    </script>
 
-let toggleButton = document.getElementById('toggleButton');
-
-function toggleButtonState() {
-
-    toggleButton.classList.toggle('active');
-
- 
-    if (toggleButton.classList.contains('active')) {
-        toggleButton.textContent = 'ON';
-    } else {
-        toggleButton.textContent = 'OFF';
-    }
-}
-toggleButton.addEventListener('click', toggleButtonState);
     </script>
 </body>
-
 </html>
