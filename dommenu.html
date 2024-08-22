@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom menu</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 0px;
+            background-color: blue;
+            transition: height 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="data()">=</button>
+    <div class="box" id="box1"></div>
+    <script>
+             function data() {
+            let box = document.querySelector('.box');
+            if (box.style.height === '0px' || box.style.height === '') {
+                box.style.height = '200px';
+            } else {
+                box.style.height = '0px';
+            }
+        }
+    </script>
+</body>
+</html>
