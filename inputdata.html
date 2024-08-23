@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form onsubmit="data({username:username.value,password:password.value})">
         <input type="text" name="username" placeholder="username">
         <input type="text" name="password" placeholder="password">
-        <button >submit</button>
+        <button>submit</button>
     </form>
     <table>
         <thead>
@@ -19,14 +21,31 @@
                 <th>PassWord</th>
             </tr>
         </thead>
-        <tbody id="dataAdd"></tbody>
+        <tbody id="dataAdd">
+        </tbody>
     </table>
     <script>
+        let store = []
         function data(el) {
             event.preventDefault()
-            console.log(event.target.username.value); 
-            document.getElementById("dataAdd").innerHTML  
-        }
+            console.log(event.target.username.value);
+            store.push(el)
+            console.log(store);
+            let  datavalue = ""
+            for (let i = 0; i < store.length; i++) {
+                 datavalue +=`
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${store[i].username}</td>
+                    <td>${store[i].password}</td>
+                    </tr>`
+                }
+                document.getElementById("dataAdd").innerHTML = datavalue
+                event.target.username.value = ""
+                event.target.password.value = ""
+
+            }
     </script>
 </body>
+
 </html>

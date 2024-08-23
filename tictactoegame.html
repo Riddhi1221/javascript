@@ -1,0 +1,251 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-box {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(105, 81, 81);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box button {
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+            background-color: rgb(91, 37, 37);
+            color: rgb(254, 254, 254);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-box">
+        <h1 id="Winner">Winner</h1>
+        <div class="box">
+            <button id="btn1"></button>
+            <button id="btn2"></button>
+            <button id="btn3"></button>
+            <button id="btn4"></button>
+            <button id="btn5"></button>
+            <button id="btn6"></button>
+            <button id="btn7"></button>
+            <button id="btn8"></button>
+            <button id="btn9"></button>
+        </div>
+    </div>
+
+    <script>
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+        let btn5 = document.getElementById('btn5')
+        let btn6 = document.getElementById('btn6')
+        let btn7 = document.getElementById('btn7')
+        let btn8 = document.getElementById('btn8')
+        let btn9 = document.getElementById('btn9')
+        let trun ="x"
+        function checkBTN(el) {
+            console.log(el);
+            if(el.innerhtml == "")
+        {
+            el.innerhtml = trun
+            trun =trun == "x" ? "o" :"x"
+        }
+        }
+
+        btn1.addEventListener("click",() => checkBTN(btn1))
+        btn2.addEventListener("click",() => checkBTN(btn2))
+        btn3.addEventListener("click",() => checkBTN(btn3))
+        btn4.addEventListener("click",() => checkBTN(btn4))
+        btn5.addEventListener("click",() => checkBTN(btn5))
+        btn6.addEventListener("click",() => checkBTN(btn6))
+        btn7.addEventListener("click",() => checkBTN(btn7))
+        btn8.addEventListener("click",() => checkBTN(btn8))
+        btn9.addEventListener("click",() => checkBTN(btn9))
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tictactoe.css">
+</head>
+<style>
+    .box {
+        width: 150px;
+        height: 150px;
+    }
+
+    body {
+        background-color: black;
+        text-align: center;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    h1 {
+        padding-top: 50px;
+    }
+
+    .container {
+        padding-top: 40px;
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 0;
+        font-size: 50px;
+        color: rgb(206, 41, 41);
+        font-weight: bold;
+    }
+
+    #msg {
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <main>
+        <h1>tic tac toe</h1>
+        <div class="container">
+            <div class="flex">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+            <div class="flex">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+            <div class="flex">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+        </div>
+    </main>
+
+    <div class="msg-container hide">
+        <p id="msg">win</p>
+    </div>
+
+
+
+
+    <script>
+        let boxes = document.querySelectorAll(".box");
+        let msgcontainer = document.querySelector(".msg-container");
+        let msg = document.querySelector("#msg");
+        const winpatterns = [
+            [0, 1, 2],
+            [0, 3, 6],
+            [0, 4, 8],
+            [1, 4, 7],
+            [2, 5, 8],
+            [2, 4, 6],
+            [3, 4, 5],
+            [6, 7, 8],
+        ];
+
+        let turn0 = true;
+
+        boxes.forEach((box) => {
+            box.addEventListener("click", () => {
+                console.log("box clicked");                  //box click thy
+                if (turn0) {
+                    box.innerHTML = "0";
+                    turn0 = false;
+                } else {
+                    box.innerHTML = "X";
+                    turn0 = true;
+
+                }
+                box.disabled = true;                  //one time click thy button
+
+                chackWinner();                    //win kon thy ae chack karava mate function
+            });
+        });
+
+        //step-3
+        const gamelock = () => {                // game win thy pchi game work krti bndh thy jay
+            //-> in short pchi click na thy btn pr
+            for (let box of boxes) {
+                box.disabled = true;
+            }
+        }
+
+        //step-2
+        const showWinner = (win) => {                   //je win thy te msg print thy
+
+            msg.innerHTML = `congratulations, winner is  ${ win }`;
+            msgcontainer.classList.remove("hide");                  //msg pela hide krel hoi ae visible karava
+
+            gamelock();
+        }
+
+
+        //step-1   play game loop
+
+        const chackWinner = () => {
+            for (let pattern of winpatterns) {       //winpattern sathe compair thay(loop)
+
+                let pos1 = boxes[pattern[0]].innerHTML;   // winpattern-pattern ni position in arrey
+                let pos2 = boxes[pattern[1]].innerHTML;    // winpattern-pattern ni position in arrey
+                let pos3 = boxes[pattern[2]].innerHTML;     // winpattern-pattern ni position in arrey
+
+                if (pos1 != "" && pos2 != "" && pos3 != "") {          //if buttrn khali no hoi to
+                    if (pos1 === pos2 && pos2 === pos3) {          //0 0 0 same hoi or  X X X same hoi
+                        console.log("win", pos1);
+                        showWinner(pos1);                            //position 1 hoi ae win thay
+                    }
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
