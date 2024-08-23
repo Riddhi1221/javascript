@@ -79,9 +79,9 @@
         btn8.addEventListener("click",() => checkBTN(btn8))
         btn9.addEventListener("click",() => checkBTN(btn9))
     </script>
-</body>
+</body>-->
 
-</html> -->
+<!-- </html>  -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,8 +90,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="tictactoe.css">
-</head>
 <style>
     .box {
         width: 150px;
@@ -141,8 +139,14 @@
     .hide {
         display: none;
     }
+    #reset {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
 </style>
-
+</head>
 <body>
 
     <main>
@@ -178,7 +182,7 @@
         let boxes = document.querySelectorAll(".box");
         let msgcontainer = document.querySelector(".msg-container");
         let msg = document.querySelector("#msg");
-        let resetBtn =document.getElementById("reset")
+        let resetBtn =document.getElementById("reset");
         const winpatterns = [
             [0, 1, 2],
             [0, 3, 6],
