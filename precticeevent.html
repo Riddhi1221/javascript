@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mouse Events</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            margin: 50px auto;
+        }
+    </style>
 </head>
 <body>
-    <button >clice me</button>
+    <div class="box" id="box">Hover or Click Me</div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        // Mouse click event
+        box.addEventListener('click', () => {
+            box.style.backgroundColor = 'lightgreen';
+            box.textContent = 'Clicked!';
+        });
+
+        // Mouse double-click event
+        box.addEventListener('dblclick', () => {
+            box.style.backgroundColor = 'orange';
+            box.textContent = 'Double Clicked!';
+        });
+
+        // Mouse down event
+        box.addEventListener('mousedown', () => {
+            box.style.backgroundColor = 'red';
+            box.textContent = 'Mouse Down!';
+        });
+
+        // Mouse up event
+        box.addEventListener('mouseup', () => {
+            box.style.backgroundColor = 'purple';
+            box.textContent = 'Mouse Up!';
+        });
+
+        // Mouse move event
+        box.addEventListener('mousemove', () => {
+            box.style.backgroundColor = 'yellow';
+            box.textContent = 'Mouse Moving!';
+        });
+
+        // Mouse over event
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'lightblue';
+            box.textContent = 'Mouse Over!';
+        });
+
+        // Mouse out event
+        box.addEventListener('mouseout', () => {
+            box.style.backgroundColor = 'lightcoral';
+            box.textContent = 'Mouse Out!';
+        });
+    </script>
 </body>
 </html>

@@ -169,6 +169,7 @@
     <div class="msg-container hide">
         <p id="msg">win</p>
     </div>
+    <button id="reset">reset</button>
 
 
 
@@ -177,6 +178,7 @@
         let boxes = document.querySelectorAll(".box");
         let msgcontainer = document.querySelector(".msg-container");
         let msg = document.querySelector("#msg");
+        let resetBtn =document.getElementById("reset")
         const winpatterns = [
             [0, 1, 2],
             [0, 3, 6],
@@ -242,6 +244,14 @@
                 }
             }
         }
+        resetBtn.addEventListener("click", () => {
+            boxes.forEach((box) => {
+                box.innerHTML = "";
+                box.disabled = false;
+            });
+            msgcontainer.classList.add("hide");
+            turn0 = true;
+        }); 
 
 
 
