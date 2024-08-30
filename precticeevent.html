@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,6 +62,52 @@
         box.addEventListener('mouseout', () => {
             box.style.backgroundColor = 'lightcoral';
             box.textContent = 'Mouse Out!';
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 20px;
+            padding-top: 50px;
+        }
+        #inputBox {
+            width: 300px;
+            height: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Type Something</h1>
+    <input type="text" id="inputBox" placeholder="Start typing...">
+
+    <script>
+        const inputBox = document.getElementById('inputBox');
+
+        // Keydown event
+        inputBox.addEventListener('keydown', (event) => {
+            console.log(`Key Down: ${event.key}`);
+        });
+
+        // Keyup event
+        inputBox.addEventListener('keyup', (event) => {
+            console.log(`Key Up: ${event.key}`);
+        });
+
+        // Keypress event (deprecated)
+        inputBox.addEventListener('keypress', (event) => {
+            console.log(`Key Pressed: ${event.key}`);
         });
     </script>
 </body>
