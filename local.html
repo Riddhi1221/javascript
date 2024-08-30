@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("hello1");
+        console.log("hello1");
+        setTimeout(() => {
+            console.log("hello final");
+            
+        },0)
+        console.log("hello1");
+        console.log("hello1");
+        
+        // fetch('https://jsonplaceholder.typicode.com/todos')
+        // .then(res => res.json())
+        // .then(data => console.log(data))
+        // .catch(err => console.log(err))
+        // .finally(() => console.log("finally"))
+
+        async function apicalling(){
+            try {
+                let res = await fetch('https://jsonplaceholder.typicode.com/todos')
+                let data = await res.json()
+                console.log(data);
+                
+            } catch (error) {
+               console.log(error);
+                
+            }
+        }
+
+        apicalling()
+    </script>
+    <script type="module" >
+        import {sum,multi} from './app.js'
+        console.log(sum(10,20));
+        console.log(multi(10,20));
+        
+        
+        
+    </script>
+</body>
+</html>
